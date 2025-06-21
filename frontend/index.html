@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vopender Chaudhary - Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom CSS -->
+  <style>
+    /* Smooth scrolling for page navigation */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Horizontal scroll container */
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Hide scrollbar for Firefox */
+    }
+    .scroll-container::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for Chrome/Safari */
+    }
+    .scroll-container .portfolio-item {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      width: 80vw; /* Adjust width for smaller screens */
+      max-width: 400px; /* Max width for larger screens */
+      margin-right: 1rem;
+    }
+    /* Hover effects */
+    .portfolio-item:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+    /* Responsive video and image */
+    .portfolio-item video, .portfolio-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+    /* Navigation buttons */
+    .scroll-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .scroll-nav:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Navbar -->
+  <nav class="bg-blue-900 text-white fixed w-full top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <h1 class="text-xl font-bold">Vopender Chaudhary</h1>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="#home" class="hover:text-blue-300">Home</a>
+          <a href="#portfolio" class="hover:text-blue-300">Portfolio</a>
+          <a href="#about" class="hover:text-blue-300">About</a>
+          <a href="#services" class="hover:text-blue-300">Services</a>
+          <a href="#testimonials" class="hover:text-blue-300">Testimonials</a>
+          <a href="#contact" class="hover:text-blue-300">Contact</a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button id="menu-toggle" class="text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-blue-900">
+        <a href="#home" class="block px-4 py-2 hover:bg-blue-700">Home</a>
+        <a href="#portfolio" class="block px-4 py-2 hover:bg-blue-700">Portfolio</a>
+        <a href="#about" class="block px-4 py-2 hover:bg-blue-700">About</a>
+        <a href="#services" class="block px-4 py-2 hover:bg-blue-700">Services</a>
+        <a href="#testimonials" class="block px-4 py-2 hover:bg-blue-700">Testimonials</a>
+        <a href="#contact" class="block px-4 py-2 hover:bg-blue-700">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+    <div class="text-center max-w-3xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Vopender Chaudhary</h1>
+      <p class="text-xl mb-4">Visual Content Creator | Video Editor & Graphic Designer</p>
+      <p class="mb-6">Hi, I'm Vopender, a passionate creator specializing in video editing, poster design, and thumbnail creation. I craft engaging visuals that captivate audiences for brands, creators, and businesses.</p>
+      <a href="#portfolio" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">Explore My Work</a>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-8">Portfolio</h2>
+
+      <!-- Videos Subsection -->
+      <div class="mb-12 relative">
+        <h3 class="text-2xl font-semibold mb-4">Videos</h3>
+        <div class="scroll-container py-4" id="video-scroll">
+          <!-- Video 1 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Promotional Video</h4>
+            <video controls class="rounded">
+              <source src="Data/Videos/Trailer Youtube.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="mt-2">A 30-second promotional video for a brand, edited using Adobe Premiere Pro.</p>
+          </div>
+          <!-- Video 2 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">YouTube Vlog Edit</h4>
+            <video controls class="rounded">
+              <source src="Data/Videos/Department of Computer Science   Admission Open 2024-25   AKS University, Satna M.P..mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="mt-2">A 1-minute highlight reel for a YouTube vlog, edited with After Effects.</p>
+          </div>
+          <!-- Video 3 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Trailer Work</h4>
+            <video controls class="rounded">
+              <source src="Data/Videos/Trailer Youtube.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="mt-2">A Short-Film Trailer Edited in Premiere Pro and After Effects</p>
+          </div>
+
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Social Media Reel</h4>
+            <video controls class="rounded">
+              <source src="path-to-video3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="mt-2">A 15-second Instagram reel, edited using CapCut.</p>
+          </div>
+          
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Social Media Reel</h4>
+            <video controls class="rounded">
+              <source src="path-to-video3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="mt-2">A 15-second Instagram reel, edited using CapCut.</p>
+          </div>
+          <!-- Add more videos as needed -->
+        </div>
+        <!-- Navigation Buttons -->
+        <button class="scroll-nav left-4" onclick="scrollPortfolio('video-scroll', -1)">❮</button>
+        <button class="scroll-nav right-4" onclick="scrollPortfolio('video-scroll', 1)">❯</button>
+      </div>
+
+      <!-- Thumbnails Subsection -->
+      <div class="mb-12 relative">
+        <h3 class="text-2xl font-semibold mb-4">Thumbnails</h3>
+        <div class="scroll-container py-4" id="thumbnail-scroll">
+          <!-- Thumbnail 1 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">YouTube Thumbnail</h4>
+            <img src="Data/thumbnails/@024eNDING.jpg" alt="YouTube Tutorial Thumbnail" class="rounded">
+            <p class="mt-2">Clickable thumbnail for a YouTube tutorial, designed in Canva.</p>
+          </div>
+          <!-- Thumbnail 2 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Instagram Thumbnail</h4>
+            <img src="Data/thumbnails/Bubhukshathumbnail.png" alt="Instagram Carousel Thumbnail" class="rounded">
+            <p class="mt-2">Thumbnail for an Instagram carousel, created with Figma.</p>
+          </div>
+          <!-- Thumbnail 3 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Video Thumbnail</h4>
+            <img src="Data/thumbnails/recap Episode.jpg" alt="Video Thumbnail" class="rounded">
+            <p class="mt-2">Bold thumbnail for a tech review video, designed in Photoshop.</p>
+          </div>
+          <!-- Thumbnail 4 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Video Thumbnail</h4>
+            <img src="Data/thumbnails/final chitrakoot thumbnail.jpg" alt="Video Thumbnail" class="rounded">
+            <p class="mt-2">Bold thumbnail for a tech review video, designed in Photoshop.</p>
+          </div>
+          <!-- Thumbnail 5 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Video Thumbnail</h4>
+            <img src="Data/thumbnails/taj mahal.jpg" alt="Video Thumbnail" class="rounded">
+            <p class="mt-2">Bold thumbnail for a tech review video, designed in Photoshop.</p>
+          </div>
+          <!-- Add more thumbnails as needed -->
+        </div>
+        <!-- Navigation Buttons -->
+        <button class="scroll-nav left-4" onclick="scrollPortfolio('thumbnail-scroll', -1)">❮</button>
+        <button class="scroll-nav right-4" onclick="scrollPortfolio('thumbnail-scroll', 1)">❯</button>
+      </div>
+
+      <!-- Posters Subsection -->
+      <div class="mb-12 relative">
+        <h3 class="text-2xl font-semibold mb-4">Posters</h3>
+        <div class="scroll-container py-4" id="poster-scroll">
+          <!-- Poster 1 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Event Poster</h4>
+            <img src="Data/Posters/bubhuksha poster english vertical.png" alt="Event Poster" class="rounded">
+            <p class="mt-2">Vibrant event poster designed in Adobe Photoshop with bold typography.</p>
+          </div>
+          <!-- Poster 2 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Product Ad Poster</h4>
+            <img src="Data/Posters/WorkPosterFinal.png" alt="Product Ad Poster" class="rounded">
+            <p class="mt-2">Minimalist product ad poster created with Adobe Illustrator.</p>
+          </div>
+          <!-- Poster 3 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Social Media Poster</h4>
+            <img src="Data/Posters/Turing award Poster.png" alt="Social Media Poster" class="rounded">
+            <p class="mt-2">Engaging social media graphic design</p>
+          </div>
+          <!-- Poster 4 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Social Media Poster</h4>
+            <img src="Data/Posters/SaloonAdPoster.png" alt="Social Media Poster" class="rounded">
+            <p class="mt-2">Engaging social media graphic design</p>
+          </div>
+          <!-- Poster 5 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Social Media Poster</h4>
+            <img src="Data/Posters/instagram post.png" alt="Social Media Poster" class="rounded">
+            <p class="mt-2">Engaging social media graphic design</p>
+          </div>
+          <!-- Poster 6 -->
+          <div class="portfolio-item bg-gray-100 p-4 rounded-lg shadow">
+            <h4 class="text-lg font-semibold mb-2">Social Media Poster</h4>
+            <img src="Data/Posters/Priya Poster.png" alt="Social Media Poster" class="rounded">
+            <p class="mt-2">Engaging social media graphic designed in Photoshop and Illustrator</p>
+          </div>
+          <!-- Add more posters as needed -->
+        </div>
+        <!-- Navigation Buttons -->
+        <button class="scroll-nav left-4" onclick="scrollPortfolio('poster-scroll', -1)">❮</button>
+        <button class="scroll-nav right-4" onclick="scrollPortfolio('poster-scroll', 1)">❯</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="mb-4">With 3+ years of experience in video editing and graphic design, I specialize in creating visually stunning content that drives engagement. Proficient in Adobe Creative Suite, I’ve worked with clients in e-commerce, education, and entertainment to bring their ideas to life.</p>
+        <p><strong>Skills:</strong> Video Editing (Premiere Pro, After Effects), Graphic Design (Photoshop, Illustrator), Thumbnail Creation (Canva, Figma), Motion Graphics</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-8">Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-gray-100 p-4 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Video Editing</h3>
+          <p>Cinematic edits, social media reels, and YouTube videos tailored to your brand.</p>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Poster Design</h3>
+          <p>Eye-catching posters for events, products, or social media campaigns.</p>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Thumbnail Creation</h3>
+          <p>Clickable thumbnails designed to boost engagement on YouTube and social platforms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-16 bg-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-8">Testimonials</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-4 rounded-lg shadow">
+          <p class="italic">"Vopender’s thumbnails boosted my video views by 30%!"</p>
+          <p class="mt-2 font-semibold">— Client Name, YouTuber</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <p class="italic">"The event poster was a hit, perfectly capturing our brand!"</p>
+          <p class="mt-2 font-semibold">— Client Name, Event Organizer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
+      <div class="max-w-lg mx-auto">
+        <p class="mb-4">Email: <a href="mailto:vopender@example.com">vopender@example.com</a></p>
+        <p class="mb-4">Social: <a href="#" class="text-blue-600 hover:underline">LinkedIn</a> | <a href="#" class="text-blue-600 hover:underline">Instagram</a></p>
+        <p class="text-center">Reach out for collaborations or project inquiries!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-4">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>© 2025 Vopender Chaudhary. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth scrolling for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Horizontal scroll navigation for multiple containers
+    function scrollPortfolio(containerId, direction) {
+      const container = document.getElementById(containerId);
+      const scrollAmount = container.clientWidth * 0.8; // Scroll by 80% of container width
+      container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
